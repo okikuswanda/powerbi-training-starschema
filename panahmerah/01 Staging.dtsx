@@ -1,0 +1,1097 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/10/2020 3:46:36 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-C1D1KTP"
+  DTS:CreatorName="DESKTOP-C1D1KTP\oki"
+  DTS:DTSID="{2DED9ED8-7F48-4980-B5CE-1C9305E49D34}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.150"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="01 Staging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{92A6A808-8BDB-40F0-AC95-93D875CEAEFD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\staging stg_sales"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{930A64E7-AD1F-4703-8CDB-548E18957E62}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="staging stg_sales"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\staging stg_sales\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging stg_sales\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="{F0FC1E2E-9A1E-412B-87BC-AE3EE56633A7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Sales CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Salesman_abbreviated]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Salesman_abbreviated]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Salesman_abbreviated]"
+                      name="Salesman_abbreviated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Crop_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crop_code]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Crop_code]"
+                      name="Crop_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[primary_product_number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[primary_product_number]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[primary_product_number]"
+                      name="primary_product_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[product_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[product_name]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[product_name]"
+                      name="product_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[month]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[month]"
+                      name="month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[actual_sales]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[actual_sales]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[actual_sales]"
+                      name="actual_sales"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[actual_quantity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[actual_quantity]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[actual_quantity]"
+                      name="actual_quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[budget_sales]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[budget_sales]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[budget_sales]"
+                      name="budget_sales"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[budget_quantity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[budget_quantity]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[budget_quantity]"
+                      name="budget_quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Date_sales]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date_sales]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Date_sales]"
+                      name="Date_sales"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Genotype_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Genotype_code]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Genotype_code]"
+                      name="Genotype_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Genotype]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Genotype]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Genotype]"
+                      name="Genotype"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Area]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Area]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Area]"
+                      name="Area"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Provinsi]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Provinsi]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Provinsi]"
+                      name="Provinsi"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Family_description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Family_description]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Family_description]"
+                      name="Family_description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Group_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Group_code]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Group_code]"
+                      name="Group_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Offline_indicator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Offline_indicator]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Offline_indicator]"
+                      name="Offline_indicator"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Product_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product_status]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Product_status]"
+                      name="Product_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Marketing_representative_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Marketing_representative_name]"
+                      length="100"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Marketing_representative_name]"
+                      name="Marketing_representative_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Salesman_abbreviated]"
+                      dataType="wstr"
+                      length="100"
+                      name="Salesman_abbreviated" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crop_code]"
+                      dataType="wstr"
+                      length="100"
+                      name="Crop_code" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[primary_product_number]"
+                      dataType="wstr"
+                      length="100"
+                      name="primary_product_number" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[product_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      dataType="wstr"
+                      length="100"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[month]"
+                      dataType="wstr"
+                      length="100"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[actual_sales]"
+                      dataType="wstr"
+                      length="100"
+                      name="actual_sales" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[actual_quantity]"
+                      dataType="wstr"
+                      length="100"
+                      name="actual_quantity" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[budget_sales]"
+                      dataType="wstr"
+                      length="100"
+                      name="budget_sales" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[budget_quantity]"
+                      dataType="wstr"
+                      length="100"
+                      name="budget_quantity" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date_sales]"
+                      dataType="wstr"
+                      length="100"
+                      name="Date_sales" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Genotype_code]"
+                      dataType="wstr"
+                      length="100"
+                      name="Genotype_code" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Genotype]"
+                      dataType="wstr"
+                      length="100"
+                      name="Genotype" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Area]"
+                      dataType="wstr"
+                      length="100"
+                      name="Area" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Provinsi]"
+                      dataType="wstr"
+                      length="100"
+                      name="Provinsi" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Family_description]"
+                      dataType="wstr"
+                      length="100"
+                      name="Family_description" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Group_code]"
+                      dataType="wstr"
+                      length="100"
+                      name="Group_code" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Offline_indicator]"
+                      dataType="wstr"
+                      length="100"
+                      name="Offline_indicator" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product_status]"
+                      dataType="wstr"
+                      length="100"
+                      name="Product_status" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Marketing_representative_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="Marketing_representative_name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging stg_sales\stg_ewindo"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="stg_ewindo"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[stg_sales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging stg_sales\stg_ewindo.Connections[OleDbConnection]"
+                  connectionManagerID="{3904B260-66FD-4C63-87F0-A3FB33D8C7DF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Salesman_abbreviated]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Salesman_abbreviated"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[salesman_abbreviated]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Salesman_abbreviated]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Crop_code]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Crop_code"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[crop_code]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Crop_code]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[primary_product_number]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="primary_product_number"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[primary_product_number]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[primary_product_number]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[product_name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="product_name"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[product_name]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[product_name]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[year]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[month]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="month"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[month]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[month]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[actual_sales]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="actual_sales"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[actual_sales]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[actual_sales]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[actual_quantity]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="actual_quantity"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[actual_quantity]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[actual_quantity]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[budget_sales]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="budget_sales"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[budget_sales]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[budget_sales]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[budget_quantity]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="budget_quantity"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[budget_quantity]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[budget_quantity]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Date_sales]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Date_sales"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[date_sales]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Date_sales]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Genotype_code]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Genotype_code"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[genotype_code]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Genotype_code]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Genotype]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Genotype"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[genotype]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Genotype]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Area]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Area"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[area]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Area]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Provinsi]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Provinsi"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[provinsi]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Provinsi]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Family_description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Family_description"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[family_description]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Family_description]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Group_code]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Group_code"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[group_code]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Group_code]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Offline_indicator]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Offline_indicator"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[offline_indicator]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Offline_indicator]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Product_status]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Product_status"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[product_status]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Product_status]" />
+                    <inputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].Columns[Marketing_representative_name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Marketing_representative_name"
+                      externalMetadataColumnId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[marketing_representative_name]"
+                      lineageId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output].Columns[Marketing_representative_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[salesman_abbreviated]"
+                      dataType="wstr"
+                      length="100"
+                      name="salesman_abbreviated" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[crop_code]"
+                      dataType="wstr"
+                      length="100"
+                      name="crop_code" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[primary_product_number]"
+                      dataType="wstr"
+                      length="100"
+                      name="primary_product_number" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[product_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                      dataType="wstr"
+                      length="100"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[month]"
+                      dataType="wstr"
+                      length="100"
+                      name="month" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[actual_sales]"
+                      dataType="wstr"
+                      length="100"
+                      name="actual_sales" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[actual_quantity]"
+                      dataType="wstr"
+                      length="100"
+                      name="actual_quantity" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[budget_sales]"
+                      dataType="wstr"
+                      length="100"
+                      name="budget_sales" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[budget_quantity]"
+                      dataType="wstr"
+                      length="100"
+                      name="budget_quantity" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[date_sales]"
+                      dataType="wstr"
+                      length="100"
+                      name="date_sales" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[genotype_code]"
+                      dataType="wstr"
+                      length="100"
+                      name="genotype_code" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[genotype]"
+                      dataType="wstr"
+                      length="100"
+                      name="genotype" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[area]"
+                      dataType="wstr"
+                      length="100"
+                      name="area" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[provinsi]"
+                      dataType="wstr"
+                      length="100"
+                      name="provinsi" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[family_description]"
+                      dataType="wstr"
+                      length="100"
+                      name="family_description" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[group_code]"
+                      dataType="wstr"
+                      length="100"
+                      name="group_code" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[offline_indicator]"
+                      dataType="wstr"
+                      length="100"
+                      name="offline_indicator" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[product_status]"
+                      dataType="wstr"
+                      length="100"
+                      name="product_status" />
+                    <externalMetadataColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input].ExternalColumns[marketing_representative_name]"
+                      dataType="wstr"
+                      length="100"
+                      name="marketing_representative_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\staging stg_sales\stg_ewindo.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging stg_sales\stg_ewindo.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging stg_sales\stg_ewindo.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging stg_sales\stg_ewindo.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\staging stg_sales.Paths[Flat File Source Output]"
+              endId="Package\staging stg_sales\stg_ewindo.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\staging stg_sales\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate stg_sales"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FB6221AC-A051-480A-BB3F-8E45CD7217C2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate stg_sales"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3904B260-66FD-4C63-87F0-A3FB33D8C7DF}"
+          SQLTask:SqlStatementSource="truncate table stg_sales;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DC8ED6EB-A2F3-4204-B0AD-1903A730E46A}"
+      DTS:From="Package\Truncate stg_sales"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\staging stg_sales" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\staging stg_sales"
+          TopLeft="98,98" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Truncate stg_sales"
+          TopLeft="98,14" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="179.75,56">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\staging stg_sales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\staging stg_sales\Flat File Source"
+          TopLeft="84,48" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\staging stg_sales\stg_ewindo"
+          TopLeft="99,170" />
+        <EdgeLayout
+          Id="Package\staging stg_sales.Paths[Flat File Source Output]"
+          TopLeft="162.5,90">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80"
+              Start="0,0"
+              End="0,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging stg_sales\stg_ewindo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
